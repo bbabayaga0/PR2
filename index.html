@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR2-Agapov Yaroslav 04.10.23</title>
+</head>
+<body>
+    <script>
+        function replace(array){
+            var first, last, found = false;
+
+            for(let i = 0; i <= array.length; i++){
+                if(!found && array[i] < 0){
+                    first = i;
+                    found = true;
+                }
+                if(array[i] > 0){
+                    last = i;
+                }
+            }
+            if(first >= 0 && last >=0){
+                [array[first], array[last]] = [array[last], array[first]];
+            }
+        }
+
+
+    const num = [-7, -10, -100, 25, 10,47];
+    replace(num);
+    document.writeln(num);
+    
+    </script>
+</body>
+</html>
