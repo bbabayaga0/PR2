@@ -7,29 +7,32 @@
 </head>
 <body>
     <script>
-function replace(array) {
-  var arr = [];  
-  for (let i = 0; i < 5; i++) {  
-    arr.push(Number(prompt("Ваше число ")));
-  }  
-  var first, last, found = [];
-
-            for(let i = 0; i <= arr; i++){
-                if(!found && array[i] < 0){
-                    first = i;
-                    found = true;
-                }
-                if(array[i] > 0){
-                    last = i;
-                }
-            }
-            if(first >= 0 && last >=0){
-                [array[first], array[last]] = [array[last], array[first]];
-            }
-            var num = arr + first, last, found 
-            document.writeln(num)
-        }
-        replace()
+function swap(num){
+  return -num;
+}
+ 
+function swapping() {
+  var arr = [];
+  var number;
+ 
+  do {
+    number = prompt('Введите число', '');
+    if (number !== null) {
+      arr.push(number);
+    }
+  } while (number !== '' && number !== null);
+ 
+  var plus = arr.slice(0).sort(function(a, b) { return a - b; });
+  var min  = arr.slice(1);
+ 
+  plus.map(function(num){ return arr.push(num); });
+ 
+  min.map(swap);
+ 
+ return arr;
+}
+var result = swapping();
+document.writeln('Перестановка выполнена:', result);
     </script>
 </body>
 </html>
